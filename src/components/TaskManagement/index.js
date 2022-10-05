@@ -1,9 +1,18 @@
-import React from 'react'
-
-const Taskmanagement = () => {
+import React from "react";
+import Completed from "./Completed";
+import Progress from "./Progress";
+import Todo from "./Todo";
+const TaskManagement = () => {
   return (
-    <div>Taskmanagement</div>
-  )
-}
+    <>
+      <button className="addtask">CREATE TASK</button>
+      <div className="row taskrow">
+        <Todo />
+        <Progress />
+        <Completed />
+      </div>
+    </>
+  );
+};
 
-export default Taskmanagement;
+export default TaskManagement;

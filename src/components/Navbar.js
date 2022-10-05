@@ -1,17 +1,36 @@
-import Icon from "../task.png"
-import React from 'react'
+import NavbarIcon from "../tasks.png";
 
 const Navbar = () => {
   return (
-    <div><nav class="navbar bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="">
-        <img src={Icon} alt="Logo" width="30" height="24" class="d-inline-block align-text-top"/>
-    Task
-      </a>
-    </div>
-  </nav></div>
-  )
-}
+    <>
+      <nav
+        style={{ backgroundColor: "orange" }}
+        class="navbar navbar-default fixed-top"
+      >
+        <div class="container">
+          <a className="navbar-brand" href="/">
+            <img
+              src={NavbarIcon}
+              alt=""
+              width="30"
+              height="24"
+              className="d-inline-block align-text-top"
+            />
+            TIme Cluster
+          </a>
+          <form class="d-flex">
+            <button
+              style={{ backgroundColor: "black", color: "white" }}
+              class="btn"
+              type="button"
+            >
+              Login/Signup
+            </button>
+          </form>
+        </div>
+      </nav>
+    </>
+  );
+};
 
 export default Navbar;

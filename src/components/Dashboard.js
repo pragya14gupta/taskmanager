@@ -1,15 +1,15 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Feed from './Feed';
-import Myfeed from './MyFeed';
-import Savedpost from './SavedPost';
-import Taskmanagement from './TaskManagement';
-import Taskdashboard from './TaskDashboard';
-import Myprofile from './MyProfile';
+import * as React from "react";
+import PropTypes from "prop-types";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import Feed from "./Feed";
+import MyFeed from "./MyFeed";
+import SavedPosts from "./SavedPost";
+import MyProfile from "./MyProfile";
+import TaskDashboard from "./TaskDashboard";
+import TaskManagement from "./TaskManagement";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -40,7 +40,7 @@ TabPanel.propTypes = {
 function a11yProps(index) {
   return {
     id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-tabpanel-${index}`,
+    "aria-controls": `vertical-tabpanel-${index}`,
   };
 }
 
@@ -52,16 +52,21 @@ export default function VerticalTabs() {
   };
 
   return (
-    <Box
-      sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 224 }}
-    >
+    <>
       <Tabs
         orientation="vertical"
-        variant="scrollable"
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        sx={{ borderRight: 1, borderColor: 'divider' }}
+        sx={{
+          borderRight: 2,
+          borderColor: "divider",
+          backgroundColor: "white",
+          fontWeight: "bolder",
+          position: "fixed",
+          width: "200px",
+          marginTop: "50px",
+        }}
       >
         <Tab label="FEED" {...a11yProps(0)} />
         <Tab label="MY FEED" {...a11yProps(1)} />
@@ -69,26 +74,37 @@ export default function VerticalTabs() {
         <Tab label="TASK MANAGEMENT" {...a11yProps(3)} />
         <Tab label="TASK DASHBOARD" {...a11yProps(4)} />
         <Tab label="MY PROFILE" {...a11yProps(5)} />
-        
       </Tabs>
       <TabPanel value={value} index={0}>
-        <Feed/>
+        <div className="tabclass">
+          <Feed />
+        </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Myfeed/>
+        <div className="tabclass">
+          <MyFeed />
+        </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <Savedpost/>
+        <div className="tabclass">
+          <SavedPosts />
+        </div>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <Taskmanagement/>
+        <div className="tabclass">
+          <TaskManagement />
+        </div>
       </TabPanel>
       <TabPanel value={value} index={4}>
-        <Taskdashboard/>
+        <div className="tabclass">
+          <TaskDashboard />
+        </div>
       </TabPanel>
       <TabPanel value={value} index={5}>
-        <Myprofile/>
+        <div className="tabclass">
+          <MyProfile />
+        </div>
       </TabPanel>
-      </Box>
+    </>
   );
 }

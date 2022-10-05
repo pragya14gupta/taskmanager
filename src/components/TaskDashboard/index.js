@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-const Taskdashboard = () => {
-  return (
-    <div>Taskdashboard</div>
-  )
-}
+const TaskDashboard = () => {
+  return <div>Hello from the Task Dashboard</div>;
+};
 
-export default Taskdashboard;
+export default TaskDashboard;

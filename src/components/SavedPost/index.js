@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import Post from "../Post";
 
-const Savedpost = () => {
+const SavedPosts = () => {
   return (
-    <div>Savedpost</div>
-  )
-}
+    <>
+      <Post />
+      <Post />
+    </>
+  );
+};
 
-export default Savedpost
+export default SavedPosts;
