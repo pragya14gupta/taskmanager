@@ -1,7 +1,9 @@
-import React from "react";
+import React from 'react'
 
-const MyProfile = () => {
-  return <div>Hello from the PROFILE Dashboard</div>;
-};
+export const MyFeed = () => {
+  return (
+    <div>hello from Feed</div>
+  )
+}
 
-export default MyProfile;
+export default MyFeed;

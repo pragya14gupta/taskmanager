@@ -1,13 +1,9 @@
-import React from "react";
-import Post from "../Post";
+import React from 'react'
 
-const SavedPosts = () => {
+export const SavedPosts = () => {
   return (
-    <>
-      <Post />
-      <Post />
-    </>
-  );
-};
+    <div>hello from SavedPosts</div>
+  )
+}
 
 export default SavedPosts;

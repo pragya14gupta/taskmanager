@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        style={{ backgroundColor: "orange" }}
+        style={{ backgroundColor: "lightgreen" }}
         class="navbar navbar-default fixed-top"
       >
         <div class="container">
@@ -20,7 +20,7 @@ const Navbar = () => {
           </a>
           <form class="d-flex">
             <button
-              style={{ backgroundColor: "black", color: "white" }}
+              style={{ backgroundColor: "orange", color: "white" }}
               class="btn"
               type="button"
             >

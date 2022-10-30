@@ -1,46 +1,46 @@
 import React from "react";
 import Post from "../Post";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
+import "./index.css";
 
 const style = {
   position: "absolute",
-  top: "20%",
+  top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 600,
-  bgcolor: "background.paper",
-  border: "1px solid #000",
+  width: 500,
+  height: 200,
+  bgcolor: "skyblue",
+  border: "2px solid skyblue",
+  borderRadius: "10px 10px 10px 10px",
   boxShadow: 24,
   p: 4,
 };
 
-const Feed = () => {
+export const Feed = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
   return (
     <>
-      <div className="mt-4">
-        <div onClick={() => handleOpen()} className="inputbox">
-          <textarea disabled placeholder="Create a post..." type="text" />
-        </div>
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+      <div className=" mt-10">
+        <Button onClick={handleOpen}>
+          <textarea
+            disabled
+            placeholder="Create a Post..."
+            type="text"
+            style={{marginLeft:"210px" , marginTop:"30px" ,textAlign: "center", color: "white" }}
+          ></textarea>
+        </Button>
       </div>
+
+      <Post />
+      <Post />
       <Modal
+        className="formodal"
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
@@ -48,16 +48,26 @@ const Feed = () => {
       >
         <Box sx={style}>
           <textarea
-            className="postbox"
-            type="text"
-            placeholder="Write a post.."
-          />
-          <input type="file" accept="image/png, image/jpg, image/jpeg" />
-          <button className="postbuton">POST</button>
+            className="Postbox"
+            placeholder="write your post here..."
+            style={{  padding: "10px" }}
+          ></textarea>
+          <div className="row">
+            <div className="col-6" style={{ marginLeft: "0px" }}>
+              <input type="file"></input>
+            </div>
+            <div className="col-6">
+              <button
+                className="submitbutton"
+                style={{ backgroundColor: "lightgreen" }}
+              >
+                Submit
+              </button>
+            </div>
+          </div>
         </Box>
       </Modal>
     </>
   );
 };
-
 export default Feed;

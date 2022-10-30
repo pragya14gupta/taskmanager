@@ -1,75 +1,86 @@
-import React, { useState } from "react";
-import "./index.css";
-import TurnedInNotIcon from "@mui/icons-material/TurnedInNot";
-import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
+import React,{useState} from "react";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import CommentIcon from "@mui/icons-material/Comment";
-import ThumbUpIcon from "@mui/icons-material/ThumbUp";
-import TurnedInIcon from "@mui/icons-material/TurnedIn";
-const Index = () => {
-  const [liked, setliked] = useState(false);
-  const [saved, setsaved] = useState(false);
+import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+import BookmarkIcon from "@mui/icons-material/Bookmark";
+// import { Autocomplete } from "@mui/material";
+
+
+export const Post = () => {
+const [liked, setLiked]= useState(false);
+const [saved, setSaved]= useState(false);
 
   return (
-    <div class="container ">
-      <div class="row d-flex ">
-        <div class="col-md-8">
-          <div class="card">
-            <div class="d-flex justify-content-between p-2 px-3">
-              <div class="d-flex flex-row align-items-center">
-                <img
-                  src="https://i.imgur.com/UXdKE3o.jpg"
-                  width="50"
-                  class="rounded-circle"
-                />
-                <div class="d-flex flex-column ml-2">
-                  <span class="font-weight-bold">Jeanette Sun</span>{" "}
-                  <small class="text-primary">Collegues</small>{" "}
+    <>
+
+
+
+
+      <div className="py-40 bg-gray-300 my-3">
+        <div className="h-screen px-2 text-center"  style={{marginLeft:"300px"}}>
+          <div className="max-w-md mx-auto bg-white shadow-lg rounded-md overflow-hidden md:max-w-md ">
+            <div className="md:flex" >
+              <div className="w-full">
+                <div className="flex justify-between items-center p-3">
+                  <div className="flex flex-row items-center">
+                    <img
+                      src="https://i.imgur.com/aq39RMA.jpg"
+                      alt=""
+                      className="rounded-full"
+                      width="50"
+                    />
+
+                    <div className="flex flex-row items-center ml-2">
+                      <span className="font-bold mr-1">Mautic War</span>
+
+                      <small className="h-1 w-1 bg-gray-300 rounded-full mr-1 mt-1"></small>
+                      <a
+                        href="/"
+                        className="text-blue-600 text-sm hover:text-blue-800"
+                      >
+                        Follow
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="pr-2">
+                    <i className="fa fa-ellipsis-h text-gray-400 hover:cursor-pointer hover:text-gray-600"></i>
+                  </div>
                 </div>
-              </div>
-              <div class="d-flex flex-row mt-1 ellipsis">
-                <small class="mr-2">20 mins</small>{" "}
-                <i class="fa fa-ellipsis-h"></i>{" "}
-              </div>
-            </div>{" "}
-            <img src="https://i.imgur.com/xhzhaGA.jpg" class="img-fluid" />
-            <div class="p-2">
-              <p class="text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt.
-              </p>
-              <hr />
-              <div class="d-flex justify-content-between align-items-center">
-                <div
-                  onClick={() => setliked(!liked)}
-                  style={{ cursor: "pointer" }}
-                  class="d-flex flex-row icons d-flex align-items-center"
-                >
-                  {liked ? <ThumbUpIcon /> : <ThumbUpOffAltIcon />}
+
+                <div>
+                  <img
+                    src="https://i.imgur.com/kOFqgtE.jpg"
+                    alt=""
+                    className="w-full h-75"
+                  />
                 </div>
-                <div
-                  onClick={() => alert("Commented!")}
-                  style={{ cursor: "pointer" }}
-                  class="d-flex flex-row icons d-flex align-items-center"
-                >
-                  <CommentIcon />
+                <div className="row mt-2" style={{height:"40px"}}>
+                  <div className="col-4" style={{float:"right", curser: "pointer"}}
+                  onClick={()=> setLiked(!liked)}>
+                   {liked? <FavoriteIcon fontSize="large" />: <FavoriteBorderIcon fontSize="large"/>}
+                   
+                  </div>
+                  <div className="col-4"
+                   onClick={()=> alert("commented!")}
+                   style={{curser: "pointer"}}>
+                    <CommentIcon fontSize="large"/>
+                  </div>
+                  <div className="col-4"
+                  style={{curser: "pointer"}}
+                  onClick={()=> setSaved(!saved)}>
+                    {saved?<BookmarkIcon fontSize="large"/>:<BookmarkBorderIcon fontSize="large" />
+                    }
+                  </div>
                 </div>
-                <div
-                  onClick={() => setsaved(!saved)}
-                  style={{ cursor: "pointer" }}
-                  class="d-flex flex-row muted-color"
-                >
-                  {saved ? <TurnedInIcon /> : <TurnedInNotIcon />}
-                </div>
+              
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <hr />
-      <br />
-    </div>
+    </>
   );
 };
-
-export default Index;
+export default Post;
